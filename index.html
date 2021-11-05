@@ -23,10 +23,10 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mostra</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Tots els Productes</a></li>
+                                <li><a class="dropdown-item" href="#" id="allProducts">Tots els Productes</a></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><a class="dropdown-item" href="#">Mes Populars</a></li>
-                                <li><a class="dropdown-item" href="#">Noves adquisicions</a></li>
+                                <li><a class="dropdown-item" href="#" id="newProduct">Noves adquisicions</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -49,12 +49,61 @@
             </div>
         </header>
         <!-- Section-->
-        <section class="py-5">
+        <section class="py-5" id="productos">
             <div class="container px-4 px-lg-5 mt-5">
                 <div id="products" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <!-- Aquí los productos -->
                 </div>
             </div>
+            
+        </section>
+        <section class="hide" id="formulario">
+            <di>
+                <form method="post" id="new-car" novalidate >
+                    <label for="name">Nombre</label><br>
+                    <input type="text"  id="name" minlength="10" maxlength="30" required ><br>
+                    <spam class="error" id="error-name"></spam><br>
+
+                    <label for="original_price">Precio original </label><br>
+                    <input type="number" id="original_price" min="0" step="0.01" required><br>
+                    <spam class="error" id="error-original"></spam><br>
+
+                    <label for="discount_price">Precio descuento </label><br>
+                    <input type="number" id="discount_price" min="0" step="0.01" ><br>
+                    <spam class="error" id="error-discount"></spam><br>
+
+
+                    <label for="start">Estrelllas</label><br>
+                    <input type="range" id="start" min="1" max="5" required><br>
+                    <spam class="error" id="error-star"></spam><br>
+
+                    <label for="photo">Foto</label>
+                    <input type="file" id="photo"><br>
+                    <spam class="error" id="error-foto"></spam> <br>
+
+
+                    <label for="fuel">Gasolina:</label><br>
+                    <select name="fuel" id="fuel">
+                        <option value=-1>Seleciona el tipo </option>
+                    </select><br>
+                    <spam class="error" id="error-fuel"></spam> <br>
+                    
+                    <label for="manual_gear">Cambio manual</label>
+                    <input type="radio" id="manual_gear" name="gear" value="0" required><br>
+                    <label for="auto_gear">Cambio Automatico</label>
+                    <input type="radio" id="auto_gear" name="gear" value="1" required><br>
+                    <spam class="error" id="error-radio"></spam> <br>
+
+                    <label for="kilometros">Kilometros</label><br>
+                    <input type="number" id="kilometros" required min="0"><br>
+                    <spam class="error" id="error-kilometro"></spam><br>
+
+                    <label>Acepta nuestras politicas</label>
+                    <input type="checkbox" id="acepta" name="acepta"  required><br>
+                    <spam class="error" id="error-acepta"></spam><br>
+                    <button type="submit">Enviar</button>
+                </form>
+            </di>
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
