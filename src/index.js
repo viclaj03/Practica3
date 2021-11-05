@@ -91,7 +91,6 @@ window.addEventListener('load', () => {
         
         let fuelEnviado = typesOfFuel.find((item) => item.id === Number(inputFuel.value))
         
-        console.log(fuelEnviado)
 
         if(fuelEnviado == undefined){
             inputFuel.setCustomValidity('opcion no valida')       
@@ -255,7 +254,6 @@ function addCoche(newCar){
     products.push(newCar)
     formulario.classList.add('hide')
     coches.classList.remove('hide')
-    console.log(products[12])
 }
 
 
