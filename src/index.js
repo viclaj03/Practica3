@@ -114,10 +114,13 @@ window.addEventListener('load', () => {
             return;
         }
 
-        let gear = true;
-        if(inputGearA.value){
-            gear =false;
+        let prueba = document.querySelector('input[name="gear"]:checked').value
+
+        let gear = true
+        if(prueba > 0){
+            gear = false;
         }
+        
         const name = inputNombre.value
         const km = Number(inputKilometro.value)
         const original_price = Number(inputOriginalPrice.value)
@@ -125,13 +128,14 @@ window.addEventListener('load', () => {
         const fuel = Number(inputFuel.value)
         const sale = false;
         const star = Number(inputStar.value)
+        const manual_gear = gear
         removeAllChildNodes(productos)
         if(discount_price > 0){
-        addCoche({name,km,original_price,discount_price,fuel,sale,star})
+        addCoche({name,km,original_price,discount_price,fuel,sale,star,fuel,manual_gear})
         mostrarCoches(products)
         return
         }
-        addCoche({name,km,original_price,fuel,sale,star})
+        addCoche({name,km,original_price,fuel,sale,star,fuel,manual_gear})
         mostrarCoches(products)
     })
     
